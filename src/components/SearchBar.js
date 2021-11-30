@@ -34,6 +34,7 @@ const SearchBar = () => {
         style={{
           fontSize: 23,
           color: "#1890ff",
+          margin: 0,
         }}
       />
     </form>

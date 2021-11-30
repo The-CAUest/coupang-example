@@ -4,13 +4,15 @@ import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
 const Main = () => (
   <div className="top-bar">
-    <img
-      className="logo"
-      alt="logo"
-      src={
-        "https://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png"
-      }
-    />
+    <a className="logo" href="/">
+      <img
+        className="logo"
+        alt="logo"
+        src={
+          "https://image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png"
+        }
+      />
+    </a>
     <SearchBar />
     <div className="top-menu my-coupang">
       <UserOutlined />
