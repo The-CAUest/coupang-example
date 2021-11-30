@@ -13,10 +13,10 @@ input.search:focus {
 .search-bar {
   display: flex;
   align-items: center;
-  height: 37px;
+  height: 36px;
   width: 518px;
   border: 2px solid #1890ff;
-  padding: 3px 10px;
+  padding: 0 10px;
 }
 
 /* 검색바 - End */
@@ -41,7 +41,7 @@ img.logo {
 }
 
 span[role="img"] {
-  font-size: 35px;
+  font-size: 33px;
   color: #5b5b5b;
 }
 
