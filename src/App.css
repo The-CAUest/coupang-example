@@ -1,38 +1,20 @@
-.App {
-  text-align: center;
+/* 검색바 - Start */
+
+input.search {
+  width: 100%;
+  border: 0;
+  font-size: 11px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input.search:focus {
+  outline: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-bar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 2px solid #1890ff;
+  padding: 5px;
+  padding-right: 8px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* 검색바 - End */
