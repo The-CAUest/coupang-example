@@ -11,7 +11,7 @@ const Main = () => (
       justifyContent: "center",
     }}
   >
-    <TopBar style={{ height: "80px" }} />
+    <TopBar />
     <ImgSlider width={1920} height={"30px"} />
   </div>
 );

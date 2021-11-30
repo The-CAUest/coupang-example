@@ -27,11 +27,24 @@ input.search:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 880px;
+  width: 1010px;
+  height: 90px;
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  width: 90px;
+  height: 100%;
+  color: #ffffff;
+  background-color: #1890ff;
 }
 
 .logo {
-  width: 174;
+  width: 174px;
   height: 41px;
 }
 

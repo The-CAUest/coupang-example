@@ -1,9 +1,17 @@
 import React from "react";
 import SearchBar from "../components/SearchBar";
-import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  ShoppingCartOutlined,
+  MenuOutlined,
+} from "@ant-design/icons";
 
 const TopBar = ({ style }) => (
   <div className="top-bar" style={style}>
+    <div className="category-btn">
+      <MenuOutlined style={{ color: "#ffffff" }} />
+      카테고리
+    </div>
     <a className="logo" href="/">
       <img
         className="logo"
