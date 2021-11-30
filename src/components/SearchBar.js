@@ -13,15 +13,13 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
-      <Input.Search
-        size="large"
-        onChange={(e) => setKeyword(e?.target?.value)}
-        placeholder="찾고 싶은 상품을 검색해보세요!"
-        onSearch={onSearch}
-        enterButton
-      />
-    </div>
+    <Input.Search
+      size="large"
+      onChange={(e) => setKeyword(e?.target?.value)}
+      placeholder="찾고 싶은 상품을 검색해보세요!"
+      onSearch={onSearch}
+      enterButton
+    />
   );
 };
 
