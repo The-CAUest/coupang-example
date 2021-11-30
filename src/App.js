@@ -1,12 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-import Main from "./pages/Main";
+import React from "react";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Main />} />
-    </Routes>
-  );
+  return <div></div>;
 }
 
 export default App;

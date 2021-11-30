@@ -32,7 +32,7 @@ const SearchBar = () => {
       <SearchOutlined
         onClick={onSearch}
         style={{
-          fontSize: 16,
+          fontSize: 25,
           color: "#1890ff",
         }}
       />

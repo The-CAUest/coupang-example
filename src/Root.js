@@ -1,14 +1,15 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
-import App from "./App";
+import Main from "./pages/Main";
 Amplify.configure(config);
 
 const Root = () => (
   <BrowserRouter>
-    <App />
+    <Routes>
+      <Route path="/" element={<Main />} />
+    </Routes>
   </BrowserRouter>
 );
 

@@ -6,7 +6,9 @@ import Root from "./Root";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Root />
+    <div style={{ padding: 10 }}>
+      <Root />
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );

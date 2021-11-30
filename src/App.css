@@ -3,7 +3,7 @@
 input.search {
   width: 100%;
   border: 0;
-  font-size: 11px;
+  font-size: 16px;
 }
 
 input.search:focus {
@@ -12,9 +12,37 @@ input.search:focus {
 
 .search-bar {
   display: flex;
+  align-items: center;
+  height: 37px;
+  width: 518px;
   border: 2px solid #1890ff;
-  padding: 5px;
-  padding-right: 8px;
+  padding: 3px 10px;
 }
 
 /* 검색바 - End */
+
+/* 상단바(검색바 포함) - Start */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+img.logo {
+  width: 174;
+  height: 41px;
+}
+
+.top-menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+span[role="img"] {
+  font-size: 35px;
+  color: #5b5b5b;
+}
+
+/* 상단바(검색바 포함) - End */
