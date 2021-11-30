@@ -2,8 +2,8 @@ import React from "react";
 import SearchBar from "../components/SearchBar";
 import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
-const TopBar = () => (
-  <div className="top-bar">
+const TopBar = ({ style }) => (
+  <div className="top-bar" style={style}>
     <a className="logo" href="/">
       <img
         className="logo"
