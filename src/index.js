@@ -6,7 +6,7 @@ import Root from "./Root";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div style={{ padding: 10 }}>
+    <div>
       <Root />
     </div>
   </React.StrictMode>,
