@@ -5,15 +5,16 @@ export const getCart = /* GraphQL */ `
   query GetCart($id: ID!) {
     getCart(id: $id) {
       id
-      user
       createdAt
       updatedAt
+      owner
       Product {
         id
         name
         description
         price
         categoryID
+        img_imageUrl
         createdAt
         updatedAt
       }
@@ -29,9 +30,9 @@ export const listCarts = /* GraphQL */ `
     listCarts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        user
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -75,6 +76,7 @@ export const getProduct = /* GraphQL */ `
       description
       price
       categoryID
+      img_imageUrl
       createdAt
       updatedAt
     }
@@ -93,6 +95,7 @@ export const listProducts = /* GraphQL */ `
         description
         price
         categoryID
+        img_imageUrl
         createdAt
         updatedAt
       }

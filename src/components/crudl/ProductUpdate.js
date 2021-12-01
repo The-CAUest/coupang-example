@@ -23,12 +23,12 @@ const initialState = {
   list: {},
   loading: true,
   error: false,
-  form: { name: '', description: '', price: '', }
+  form: { name: '', description: '', price: '', img_imageUrl: '', }
 }
     
 function ProductUpdate({ id, onUpdate, style={} }) {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const changeColumns = ['name', 'description', 'price', ]
+  const changeColumns = ['name', 'description', 'price', 'img_imageUrl', ]
   const data = schema['Product']
   
   useEffect(() => {
@@ -44,6 +44,7 @@ function ProductUpdate({ id, onUpdate, style={} }) {
         dispatch({ type: 'SET_INPUT', name: 'name', value: data['name'] })
 				dispatch({ type: 'SET_INPUT', name: 'description', value: data['description'] })
 				dispatch({ type: 'SET_INPUT', name: 'price', value: data['price'] })
+				dispatch({ type: 'SET_INPUT', name: 'img_imageUrl', value: data['img_imageUrl'] })
 				
       })
     } catch (err) {
@@ -73,12 +74,9 @@ function ProductUpdate({ id, onUpdate, style={} }) {
   }
   
   return (
-    <div
-      className="App"
-      style={{ display:'flex', justifyContent: 'center', marginTop:50, ...style}}
-    >
+    <div style={style}>
       <Form
-        initialValues={{name: state.list["name"], description: state.list["description"], price: state.list["price"], }}
+        initialValues={{name: state.list["name"], description: state.list["description"], price: state.list["price"], img_imageUrl: state.list["img_imageUrl"], }}
         onFinish={updateProduct}
       >
         {changeColumns.map(column => {

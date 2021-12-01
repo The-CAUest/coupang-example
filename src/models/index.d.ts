@@ -18,7 +18,6 @@ type CategoryMetaData = {
 
 export declare class Cart {
   readonly id: string;
-  readonly user: string;
   readonly Product?: Product;
   readonly createdAt?: string;
   readonly updatedAt?: string;
@@ -32,6 +31,7 @@ export declare class Product {
   readonly description?: string;
   readonly price: number;
   readonly categoryID?: string;
+  readonly img_imageUrl?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Product, ProductMetaData>);

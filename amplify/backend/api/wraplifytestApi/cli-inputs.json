@@ -22,6 +22,6 @@
       }
     },
     "apiName": "wraplifytestApi",
-    "gqlSchemaPath": "/tmp/amplify-e183757b-acab-4d25-8a32-21d5543b8969/amplify/backend/api/wraplifytestApi/schema.graphql"
+    "gqlSchemaPath": "/tmp/amplify-ada95268-910d-495e-a350-508f1ebdd14a/amplify/backend/api/wraplifytestApi/schema.graphql"
   }
 }

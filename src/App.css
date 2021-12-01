@@ -62,3 +62,25 @@ span[role="img"] {
 }
 
 /* 상단바(검색바 포함) - End */
+
+/* 카테고리 추천 - Start */
+
+.remommand {
+  padding: 20px 0 0 0;
+}
+
+.remommand-title {
+  width: 1010px;
+  height: 90px;
+}
+
+.remommand-title > h1,
+h2 {
+  margin-bottom: -10px;
+}
+
+.remommand-title span {
+  color: #1890ff;
+}
+
+/* 카테고리 추천 - End */

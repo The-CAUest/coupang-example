@@ -9,7 +9,7 @@ import { v4 as uuid } from "uuid";
       lists: [],
       loading: true,
       error: false,
-      form: { id: "",name: "",description: "",price: 0,categoryID: "",},
+      form: { id: "",name: "",description: "",price: 0,categoryID: "",img_imageUrl: "",},
     };
     function reducer(state, action) {
       switch (action.type) {

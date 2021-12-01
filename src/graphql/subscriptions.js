@@ -2,18 +2,19 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateCart = /* GraphQL */ `
-  subscription OnCreateCart {
-    onCreateCart {
+  subscription OnCreateCart($owner: String) {
+    onCreateCart(owner: $owner) {
       id
-      user
       createdAt
       updatedAt
+      owner
       Product {
         id
         name
         description
         price
         categoryID
+        img_imageUrl
         createdAt
         updatedAt
       }
@@ -21,18 +22,19 @@ export const onCreateCart = /* GraphQL */ `
   }
 `;
 export const onUpdateCart = /* GraphQL */ `
-  subscription OnUpdateCart {
-    onUpdateCart {
+  subscription OnUpdateCart($owner: String) {
+    onUpdateCart(owner: $owner) {
       id
-      user
       createdAt
       updatedAt
+      owner
       Product {
         id
         name
         description
         price
         categoryID
+        img_imageUrl
         createdAt
         updatedAt
       }
@@ -40,18 +42,19 @@ export const onUpdateCart = /* GraphQL */ `
   }
 `;
 export const onDeleteCart = /* GraphQL */ `
-  subscription OnDeleteCart {
-    onDeleteCart {
+  subscription OnDeleteCart($owner: String) {
+    onDeleteCart(owner: $owner) {
       id
-      user
       createdAt
       updatedAt
+      owner
       Product {
         id
         name
         description
         price
         categoryID
+        img_imageUrl
         createdAt
         updatedAt
       }
@@ -105,6 +108,7 @@ export const onCreateProduct = /* GraphQL */ `
       description
       price
       categoryID
+      img_imageUrl
       createdAt
       updatedAt
     }
@@ -118,6 +122,7 @@ export const onUpdateProduct = /* GraphQL */ `
       description
       price
       categoryID
+      img_imageUrl
       createdAt
       updatedAt
     }
@@ -131,6 +136,7 @@ export const onDeleteProduct = /* GraphQL */ `
       description
       price
       categoryID
+      img_imageUrl
       createdAt
       updatedAt
     }

@@ -23,12 +23,12 @@ const initialState = {
   list: {},
   loading: true,
   error: false,
-  form: { user: '', }
+  form: { }
 }
     
 function CartUpdate({ id, onUpdate, style={} }) {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const changeColumns = ['user', ]
+  const changeColumns = []
   const data = schema['Cart']
   
   useEffect(() => {
@@ -41,8 +41,7 @@ function CartUpdate({ id, onUpdate, style={} }) {
     try {
       Cart.readCart(id).then(data => {
         dispatch({ type: 'SET_DATA', list: data })
-        dispatch({ type: 'SET_INPUT', name: 'user', value: data['user'] })
-				
+        
       })
     } catch (err) {
       console.log('fetch error : ', err)
@@ -71,12 +70,9 @@ function CartUpdate({ id, onUpdate, style={} }) {
   }
   
   return (
-    <div
-      className="App"
-      style={{ display:'flex', justifyContent: 'center', marginTop:50, ...style}}
-    >
+    <div style={style}>
       <Form
-        initialValues={{user: state.list["user"], }}
+        initialValues={{}}
         onFinish={updateCart}
       >
         {changeColumns.map(column => {

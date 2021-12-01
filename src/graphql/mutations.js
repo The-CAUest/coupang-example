@@ -8,15 +8,16 @@ export const createCart = /* GraphQL */ `
   ) {
     createCart(input: $input, condition: $condition) {
       id
-      user
       createdAt
       updatedAt
+      owner
       Product {
         id
         name
         description
         price
         categoryID
+        img_imageUrl
         createdAt
         updatedAt
       }
@@ -30,15 +31,16 @@ export const updateCart = /* GraphQL */ `
   ) {
     updateCart(input: $input, condition: $condition) {
       id
-      user
       createdAt
       updatedAt
+      owner
       Product {
         id
         name
         description
         price
         categoryID
+        img_imageUrl
         createdAt
         updatedAt
       }
@@ -52,15 +54,16 @@ export const deleteCart = /* GraphQL */ `
   ) {
     deleteCart(input: $input, condition: $condition) {
       id
-      user
       createdAt
       updatedAt
+      owner
       Product {
         id
         name
         description
         price
         categoryID
+        img_imageUrl
         createdAt
         updatedAt
       }
@@ -126,6 +129,7 @@ export const createProduct = /* GraphQL */ `
       description
       price
       categoryID
+      img_imageUrl
       createdAt
       updatedAt
     }
@@ -142,6 +146,7 @@ export const updateProduct = /* GraphQL */ `
       description
       price
       categoryID
+      img_imageUrl
       createdAt
       updatedAt
     }
@@ -158,6 +163,7 @@ export const deleteProduct = /* GraphQL */ `
       description
       price
       categoryID
+      img_imageUrl
       createdAt
       updatedAt
     }

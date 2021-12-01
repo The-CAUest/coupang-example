@@ -1,7 +1,7 @@
 import { Card, Checkbox } from 'antd'
 import 'antd/dist/antd.css'
 import Product from '../../classes/crudl/Product'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function ProductRead({ id, title, showList, style={} }) {
   const [data, setData] = useState({})
@@ -13,18 +13,15 @@ function ProductRead({ id, title, showList, style={} }) {
   if (!data) return null
   
   return(
-      <div
-        className="App"
-        style={{ display:'flex', justifyContent: 'center', marginTop:50, ...style}}
-      >
-        <Card 
-          style={{marginTop :16, width: 300, textAlign: 'center'}}
-          type="inner"
-          title={data[title]}>
+      <div style={style}>
+        <Card
+          cover={ <img src={data['img_imgUrl']} alt='logo' /> }
+          title={data[title]}
+        >
           {showList.map(function (elem) {
             if (typeof (data[elem]) === 'boolean') {
               return <Checkbox style={{marginBottom:15}} defaultChecked={data[elem]} disabled>{elem}</Checkbox>
-            }
+            } else if (elem.startsWith('img_')) {return}
             return <p>{data[elem]}</p>
           })}
         </Card>

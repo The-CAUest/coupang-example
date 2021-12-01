@@ -71,10 +71,7 @@ function CategoryUpdate({ id, onUpdate, style={} }) {
   }
   
   return (
-    <div
-      className="App"
-      style={{ display:'flex', justifyContent: 'center', marginTop:50, ...style}}
-    >
+    <div style={style}>
       <Form
         initialValues={{name: state.list["name"], }}
         onFinish={updateCategory}

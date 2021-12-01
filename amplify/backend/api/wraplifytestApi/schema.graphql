@@ -1,6 +1,5 @@
-type Cart @model @auth(rules: [{allow: private}]) {
+type Cart @model @auth(rules: [{allow: owner}]) {
   id: ID!
-  user: String!
   Product: Product @connection
 }
 
@@ -16,5 +15,6 @@ type Product @model @auth(rules: [{allow: private}]) @key(name: "byCategory", fi
   description: String
   price: Int!
   categoryID: ID
+  img_imageUrl: String
 }
- 
+  

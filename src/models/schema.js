@@ -10,13 +10,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "user": {
-                    "name": "user",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "Product": {
                     "name": "Product",
                     "isArray": false,
@@ -59,7 +52,10 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
-                                "allow": "private",
+                                "provider": "userPools",
+                                "ownerField": "owner",
+                                "allow": "owner",
+                                "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
@@ -107,6 +103,13 @@ export const schema = {
                     "name": "categoryID",
                     "isArray": false,
                     "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "img_imageUrl": {
+                    "name": "img_imageUrl",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -237,5 +240,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "c2c3800df283f374b1c400b0c47bd838"
+    "version": "eddac38d4d07e68030d183ff297da50d"
 };
