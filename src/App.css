@@ -23,12 +23,39 @@ input.search:focus {
 
 /* 상단바(검색바 포함) - Start */
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header > article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+.header-nav {
+  width: 1010px;
+  text-align: right;
+}
+
+.header-nav > span {
+  padding: 0 10px;
+  font-size: 12px;
+}
+
 .top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 1010px;
-  height: 90px;
+  height: 100px;
 }
 
 .category-btn {
