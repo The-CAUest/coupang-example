@@ -55,7 +55,7 @@ input.search:focus {
   font-size: 14px;
 }
 
-span[role="img"] {
+.top-bar span[role="img"] {
   font-size: 30px;
   color: #5b5b5b;
   margin-bottom: 5px;
@@ -105,3 +105,27 @@ h2 {
 }
 
 /* 카테고리 추천 - End */
+
+/* 로그인 - Start */
+
+.login-header {
+  margin: 10px;
+}
+
+.login-header-logo {
+  width: 195px;
+  height: 46px;
+}
+
+.login .ant-form-item-control-input-content > input,
+.ant-input-password {
+  padding: 10px 11px;
+}
+
+.login button[type="submit"] {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* 로그인 - End */
