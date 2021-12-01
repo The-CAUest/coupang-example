@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
   import "antd/dist/antd.css";
   import React, { useReducer } from "react";
   import Product from "../../classes/crudl/Product";
-  
+
   function ProductCreate({ initialValue = {} ,onCreate, inputColumn, style = {} }) {
     const initialState = {
       lists: [],
@@ -17,15 +17,15 @@ import { v4 as uuid } from "uuid";
           return { ...state, lists: action.lists, loading: false };
         case "ERROR":
           return { ...state, loading: false, error: true };
-        case "ADD": 
+        case "ADD":
           return { ...state, lists: [action.data, ...state.lists] };
-        case "RESET": 
+        case "RESET":
           return { ...state, form: initialState.form };
-        case "SET_INPUT": 
+        case "SET_INPUT":
           return {
             ...state,
             form: { ...state.form, [action.name]: action.value },
-          }; 
+          };
         default:
           return state;
       }
@@ -58,7 +58,7 @@ import { v4 as uuid } from "uuid";
 
     const schema = require("../../../src/schema.js");
     let data = schema["Product"];
-  
+
     return (
       <div style={{ ...styles.container, ...style }}>
         <Form onFinish={createProduct}>
@@ -244,20 +244,25 @@ import { v4 as uuid } from "uuid";
                     );
                   } else {
                   return (
-                    <Input
+                    <Form.Item
                       key={column}
-                      onChange={onChange}
-                      value={state.form.column}
-                      placeholder={column}
                       name={column}
-                    />
+                    >
+                      <Input
+                        key={column}
+                        onChange={onChange}
+                        value={state.form.column} //이래도 돼..?
+                        placeholder={column}
+                        name={column}
+                      />
+                    </Form.Item>
                   );
                 }
               } else {
               }
             }
           })}
-  
+
           <Button
             type="primary"
             htmlType="submit"
@@ -269,9 +274,8 @@ import { v4 as uuid } from "uuid";
       </div>
     );
   }
-  
+
   const styles = {
-    container: { display: 'flex', justifyContent: 'center', padding: 20 },
+    input: {padding: '4px 11px'}
   };
   export default ProductCreate;
-  

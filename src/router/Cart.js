@@ -20,7 +20,7 @@ function Cart() {
 
   return (
     <div style={{ backgroundColor: "#EBEBEB" }}>
-      <header>
+      <header style={styles.header}>
         <a href="/">
           <img
             alt="coupang"
@@ -31,10 +31,10 @@ function Cart() {
           />
         </a>
       </header>
-      <section class="contentsCart" style={styles.contentsCart}>
-        <section class="cart-title">
+      <section style={styles.contentsCart}>
+        <section>
           <ShoppingCartOutlined style={styles.cartIcon} />
-          <h1>장바구니</h1>
+          <h1 style={styles.h1}>장바구니</h1>
         </section>
 
         <div class="tableContent" style={styles.tableContent}>
@@ -103,9 +103,14 @@ function Cart() {
 }
 
 const styles = {
+  header: {
+    width: "1010px",
+    margin: "0 auto 10px",
+  },
   coupang: {
     display: "block",
     width: "140px",
+    padding: '20px 0 10px',
   },
   contentsCart: {
     width: "1010px",
@@ -122,8 +127,11 @@ const styles = {
   cartIcon: {
     float: "left",
     marginRight: 10,
-    marginBottom: 20,
-    fontSize: "25px",
+    marginBottom: 30,
+    fontSize: "40px",
+  },
+  h1:{
+
   },
   tableContent: {
     fontSize: "14px",

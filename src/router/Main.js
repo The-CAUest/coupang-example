@@ -14,7 +14,7 @@ const Main = () => (
       justifyContent: "center",
     }}
   >
-    <WraplifyAuthenticator />
+    {/*<WraplifyAuthenticator />*/}
     <TopBar />
     <ImgSlider width={1920} height={450} />
     <Recommand />
