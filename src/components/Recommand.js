@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Category from "../classes/crudl/Category";
 import SearchProductList from "./SearchProductList";
 
 const getRandomColor = () =>
   "#" + Math.floor(Math.random() * 16777215).toString(16);
 
 const Recommand = () => {
-  const color = getRandomColor();
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    Category.listCategory().then((cats) => setCategories(cats));
+  }, []);
+
   return (
     <div className="remommand">
       <div className="remommand-title">
@@ -14,25 +20,33 @@ const Recommand = () => {
           TREND 카테고리별 <span>추천 광고상품</span>
         </h1>
       </div>
+      {categories.map((cat) => {
+        const color = getRandomColor();
 
-      <div
-        className={"recommand-products"}
-        style={{
-          borderTop: `2px solid ${color}`,
-        }}
-      >
-        <div>
-          <h1
-            className="category-name"
+        return (
+          <div
+            className={"recommand-products"}
             style={{
-              color,
+              borderTop: `2px solid ${color}`,
             }}
           >
-            가전/디지털
-          </h1>
-        </div>
-        <SearchProductList showList={["name", "price"]} />
-      </div>
+            <div>
+              <h1
+                className="category-name"
+                style={{
+                  color,
+                }}
+              >
+                {cat.name}
+              </h1>
+            </div>
+            <SearchProductList
+              showList={["name", "price"]}
+              filter={{ categoryID: { eq: cat.id } }}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 };
