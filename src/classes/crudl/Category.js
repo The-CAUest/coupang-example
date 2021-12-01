@@ -28,9 +28,9 @@ class Category {
   static listCategory = async (filter) => {
     const {
       data: {
-        listCategorys: { items },
+        listCategories: { items },
       },
-    } = await API.graphql(graphqlOperation(listCategorys, { filter }));
+    } = await API.graphql(graphqlOperation(listCategorys));
     return items;
   };
 }

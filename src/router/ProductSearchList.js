@@ -1,6 +1,7 @@
 import React from "react";
 import SearchProductList from "../components/SearchProductList";
 import TopBar from "../components/TopBar";
+import ProductList from '../components/crudl/ProductList'
 
 function ProductSearchList() {
   const onClick = () => {

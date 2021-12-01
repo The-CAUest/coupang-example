@@ -57,14 +57,13 @@ export const listCategorys = /* GraphQL */ `
     $limit: Int
     $nextToken: String
   ) {
-    listCategorys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCategories(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
         createdAt
         updatedAt
       }
-      nextToken
     }
   }
 `;

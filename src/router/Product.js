@@ -16,8 +16,8 @@ function Product() {
       <TopBar />
       <div style={styles.contents}>
         <CoupangProductRead
-          id={"f87438c8-b7d3-4e98-8bd5-d7822778017f"}
-          showList={["img_imageUrl", "name", "price"]}
+          id={"5928b725-b7aa-49e0-97bb-a554c8465141"}
+          showList={["img_imageUrl", "name", "price", "img_descImage"]}
           style={styles.readcomp}
         />
       </div>

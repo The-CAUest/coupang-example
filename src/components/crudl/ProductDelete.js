@@ -19,7 +19,7 @@ function reducer(state, action) {
   }
 }
 
-function ProductDelete({ id, onDelete, style = {} }) {
+function ProductDelete({ id, style={} }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     fetchProduct();
@@ -39,11 +39,6 @@ function ProductDelete({ id, onDelete, style = {} }) {
   async function deleteProduct() {
     try {
       await Product.deleteProduct(id);
-      if (onDelete) {
-        onDelete();
-      } else {
-        window.location.reload();
-      }
     } catch (err) {
       console.log({ err });
     }
@@ -56,3 +51,4 @@ function ProductDelete({ id, onDelete, style = {} }) {
   );
 }
 export default ProductDelete;
+

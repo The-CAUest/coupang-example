@@ -35,9 +35,9 @@ function MyCoupang() {
     >
       <TopBar />
 
-      <section class="contentsMyCoupang" style={styles.contentsMyCoupang}>
+      <section style={styles.contentsMyCoupang}>
         <RegisProduct />
-        <div class="tableContent" style={styles.tableContent}>
+        <div style={styles.tableContent}>
           <h3 style={styles.tableTop}>등록된 상품 정보</h3>
           <div style={{ display: "flex" }}>
             <ProductList
