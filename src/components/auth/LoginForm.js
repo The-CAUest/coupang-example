@@ -72,7 +72,7 @@ const LoginForm = ({ onLogin, setAuthState, setAuthData }) => {
             />
           </Form.Item>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button type="primary" htmlType="submit" style={{ width: "35%" }}>
+            <Button type="primary" htmlType="submit">
               로그인
             </Button>
           </div>

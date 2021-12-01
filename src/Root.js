@@ -7,6 +7,7 @@ import Cart from "./router/Cart";
 import MyCoupang from "./router/MyCoupang";
 import ProductSearchList from "./router/ProductSearchList";
 import Product from "./router/Product";
+import Login from "./router/Login";
 Amplify.configure(config);
 
 const Root = () => (
@@ -17,6 +18,7 @@ const Root = () => (
       <Route path="/my-coupang" element={<MyCoupang />} />
       <Route path="/search" element={<ProductSearchList />} />
       <Route path="/products" element={<Product />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   </BrowserRouter>
 );

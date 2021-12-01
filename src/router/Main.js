@@ -1,6 +1,4 @@
 import React from "react";
-import WraplifyAuthenticator from "../components/auth/WraplifyAuthenticator";
-import ProductCreate from "../components/crudl/ProductCreate";
 import ImgSlider from "../components/ImgSlider";
 import Recommand from "../components/Recommand";
 import TopBar from "../components/TopBar";
@@ -14,7 +12,6 @@ const Main = () => (
       justifyContent: "center",
     }}
   >
-    {/*<WraplifyAuthenticator />*/}
     <TopBar />
     <ImgSlider width={1920} height={450} />
     <Recommand />
