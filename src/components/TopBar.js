@@ -28,7 +28,7 @@ const TopBar = ({ style }) => (
     </div>
     <div className="top-menu cart">
       <ShoppingCartOutlined />
-      <span>마이쿠팡</span>
+      <span>장바구니</span>
     </div>
   </div>
 );
