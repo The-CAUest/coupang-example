@@ -3,7 +3,6 @@ import WraplifyAuthenticator from "../components/auth/WraplifyAuthenticator";
 import ProductCreate from "../components/crudl/ProductCreate";
 import ImgSlider from "../components/ImgSlider";
 import Recommand from "../components/Recommand";
-import SearchProductList from "../components/crudl/SearchProductList";
 import TopBar from "../components/TopBar";
 
 const Main = () => (
@@ -28,7 +27,6 @@ const Main = () => (
         "img_imageUrl",
       ]}
     /> */}
-    <SearchProductList showList={["name", "price"]} />
   </div>
 );
 

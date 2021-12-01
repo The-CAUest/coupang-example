@@ -83,4 +83,24 @@ h2 {
   color: #1890ff;
 }
 
+.recommand-products {
+  width: 1010px;
+}
+
+.recommand-products {
+  display: flex;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.recommand-products .category-name {
+  width: 185px;
+  padding-top: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.ant-list-bordered {
+  border-width: 0 0 0 0;
+}
+
 /* 카테고리 추천 - End */

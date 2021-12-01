@@ -1,6 +1,6 @@
 import { Card, Checkbox, List } from "antd";
 import "antd/dist/antd.css";
-import Product from "../../classes/crudl/Product";
+import Product from "../classes/crudl/Product";
 import React, { useEffect, useState } from "react";
 
 function SearchProductList({ filter, showList, onClick, style = {} }) {
