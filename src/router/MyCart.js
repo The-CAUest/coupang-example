@@ -16,17 +16,18 @@ function MyCart() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let total_price = 0;
     let temp_id = [];
     Cart.listCart().then((data) => {
+      let total_price = 0;
       for (let i = 0; i < data.length; i++) {
         if (!data[i].Product?.id) {
           continue;
         }
         temp_id.push(data[i].Product?.id);
-        setPrice(total_price + data[i].Product?.price);
+        total_price += data[i].Product?.price;
       }
       setId(temp_id);
+      setPrice(total_price);
     });
   });
 
