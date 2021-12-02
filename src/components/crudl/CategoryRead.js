@@ -3,7 +3,7 @@ import 'antd/dist/antd.css'
 import Category from '../../classes/crudl/Category'
 import React, { useEffect, useState } from 'react'
 
-function CategoryRead({ id, title, showList, style={} }) {
+function CategoryRead({ id, title, showList, onClick, style={} }) {
   const [data, setData] = useState({})
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function CategoryRead({ id, title, showList, style={} }) {
   
   return(
       <div style={style}>
-        <Card title={data[title]}>
+        <Card title={data[title]} onClick={onClick ? () => onClick(data) : onClick}>
           {showList.map(function (elem) {
             if (typeof (data[elem]) === 'boolean') {
               return <Checkbox style={{marginBottom:15}} defaultChecked={data[elem]} disabled>{elem}</Checkbox>

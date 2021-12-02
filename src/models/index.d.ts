@@ -32,6 +32,7 @@ export declare class Product {
   readonly price: number;
   readonly categoryID?: string;
   readonly img_imageUrl?: string;
+  readonly img_descImage?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Product, ProductMetaData>);

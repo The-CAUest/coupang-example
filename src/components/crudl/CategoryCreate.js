@@ -60,13 +60,10 @@ import { v4 as uuid } from "uuid";
     let data = schema["Category"];
   
     return (
-      <div style={{ ...styles.container, ...style }}>
+      <div style={ style }>
         <Form onFinish={createCategory}>
           {inputColumn.map((column) => {
             for (let i = 0; i < data.length; i++) {
-              if(data[i]["isConnection"] === true){
-                continue;
-              }
               if (data[i]["name"] == column && data[i]["mandatory"]) {
                 //필수
                 if (data[i]["type"] === "AWSDate") {
@@ -269,9 +266,6 @@ import { v4 as uuid } from "uuid";
       </div>
     );
   }
-  
-  const styles = {
-    container: { display: 'flex', justifyContent: 'center', padding: 20 },
-  };
+
   export default CategoryCreate;
   

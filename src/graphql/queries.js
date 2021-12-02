@@ -15,6 +15,7 @@ export const getCart = /* GraphQL */ `
         price
         categoryID
         img_imageUrl
+        img_descImage
         createdAt
         updatedAt
       }
@@ -57,13 +58,14 @@ export const listCategorys = /* GraphQL */ `
     $limit: Int
     $nextToken: String
   ) {
-    listCategories(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCategorys(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
         createdAt
         updatedAt
       }
+      nextToken
     }
   }
 `;
@@ -76,6 +78,7 @@ export const getProduct = /* GraphQL */ `
       price
       categoryID
       img_imageUrl
+      img_descImage
       createdAt
       updatedAt
     }
@@ -95,6 +98,7 @@ export const listProducts = /* GraphQL */ `
         price
         categoryID
         img_imageUrl
+        img_descImage
         createdAt
         updatedAt
       }
