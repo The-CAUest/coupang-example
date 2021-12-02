@@ -20,10 +20,11 @@ function MyCart() {
     let temp_id = [];
     Cart.listCart().then((data) => {
       for (let i = 0; i < data.length; i++) {
-        temp_id.push(data[i].cartProductId);
-        Product.readProduct(data[i].cartProductId).then((product_data) => {
-          setPrice(total_price + product_data.price);
-        });
+        if (!data[i].Product?.id) {
+          continue;
+        }
+        temp_id.push(data[i].Product?.id);
+        setPrice(total_price + data[i].Product?.price);
       }
       setId(temp_id);
     });
@@ -54,13 +55,13 @@ function MyCart() {
             <h4>상품 정보</h4>
             <h4>상품 금액</h4>
           </div>
-          {id.map((elem) => {
+          {id.map((elem) => (
             <ProductRead
               id={elem}
               showList={["img_imageUrl", "name", "price"]}
               style={styles.readcomp}
-            />;
-          })}
+            />
+          ))}
           <div class="cartTotalPrice" style={styles.cartTotalPrice}>
             <div style={styles.text}>
               <h3 class="h" style={styles.h}>

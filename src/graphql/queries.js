@@ -34,6 +34,11 @@ export const listCarts = /* GraphQL */ `
         createdAt
         updatedAt
         owner
+        Product {
+          id
+          name
+          price
+        }
       }
       nextToken
     }
