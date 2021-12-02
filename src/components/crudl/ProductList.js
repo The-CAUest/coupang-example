@@ -29,7 +29,7 @@ function ProductList({ filter, showList, onClick, style = {} }) {
                   </Checkbox>
                 );
               } else if (elem.startsWith("img_")) {
-                return <img src={item[elem]} width={64} alt="logo" />;
+                return <img src={item[elem]} width={80} alt="logo" />;
               }
               return <p>{item[elem]}</p>;
             })}
