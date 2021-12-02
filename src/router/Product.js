@@ -5,7 +5,7 @@ import TopBar from "../components/TopBar";
 function Product() {
   return (
     <div
-      class="mycoupang"
+      className="mycoupang"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -16,7 +16,7 @@ function Product() {
       <TopBar />
       <div style={styles.contents}>
         <CoupangProductRead
-          id={"6609d7c2-dfb2-4212-9ed7-d4a8e502ebe3"}
+          id={"f87438c8-b7d3-4e98-8bd5-d7822778017f"}
           showList={["img_imageUrl", "name", "price", "img_descImage"]}
         />
       </div>
@@ -29,7 +29,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     margin: "20px 0 0 0",
-  }
+  },
 };
 
 export default Product;
