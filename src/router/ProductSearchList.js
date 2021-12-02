@@ -1,9 +1,11 @@
 import React from "react";
 import SearchProductList from "../components/SearchProductList";
 import TopBar from "../components/TopBar";
-import ProductList from '../components/crudl/ProductList'
+import { useParams } from "react-router";
 
 function ProductSearchList() {
+  const { keyword } = useParams();
+
   const onClick = () => {
     console.log("click");
   };
@@ -31,6 +33,7 @@ function ProductSearchList() {
           showList={["img_imgUrl", "name", "price"]}
           onClick={onClick}
           style={styles.listcomp}
+          filter={{ name: { contains: keyword } }}
         />
       </div>
     </div>

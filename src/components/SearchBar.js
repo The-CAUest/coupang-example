@@ -19,7 +19,7 @@ const SearchBar = () => {
       return;
     }
 
-    navigate(`/search?keyword=${keyword}`);
+    navigate(`/search/${keyword}`);
   };
 
   return (
