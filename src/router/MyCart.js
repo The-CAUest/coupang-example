@@ -4,21 +4,30 @@ import { Button } from 'antd'
 import 'antd/dist/antd.css'
 import ProductList from '../components/crudl/ProductList'
 import Product from '../classes/crudl/Product'
+import Cart from '../classes/crudl/Cart'
 import { useNavigate } from "react-router";
+import CartList from '../components/crudl/CartList'
+import CartCreate from '../components/crudl/CartCreate'
+import ProductRead from '../components/crudl/ProductRead'
 
 function MyCart () {
   const [totalPrice, setPrice] = useState(0)
+  const [id, setId] = useState([])
   const navigate = useNavigate();
 
   useEffect(() => {
     let total_price = 0
-    Product.listProduct().then((data) => {
+    let temp_id = []
+    Cart.listCart().then(data => {
       for (let i = 0; i < data.length; i++) {
-        total_price += data[i].price
+        temp_id.push(data[i].cartProductId)
+        Product.readProduct(data[i].cartProductId).then((product_data) => {
+          setPrice(total_price + product_data.price)
+        })
       }
-      setPrice(total_price)
-    })
-  }, [])
+      setId(temp_id)
+    })})
+
 
   return (
     <div style={{ backgroundColor: '#EBEBEB' }}>
@@ -45,10 +54,9 @@ function MyCart () {
             <h4>상품 정보</h4>
             <h4>상품 금액</h4>
           </div>
-          <ProductList
-            showList={['img_imageUrl', 'name', 'price']}
-            style={styles.list}
-          />
+          {id.map(elem => {
+            <ProductRead id={elem} showList={["img_imageUrl", "name", "price"]} style={styles.readcomp}/>
+          })}
           <div class="cartTotalPrice" style={styles.cartTotalPrice}>
             <div style={styles.text}>
               <h3 class="h" style={styles.h}>
@@ -173,6 +181,12 @@ const styles = {
     width: '100%',
     marginBottom: '30px',
   },
+  readcomp: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignContent: 'center',
+    padding: '7px 0px 0px 5px'
+  }
 }
 
 export default MyCart
