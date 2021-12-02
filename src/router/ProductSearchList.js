@@ -1,13 +1,14 @@
 import React from "react";
 import SearchProductList from "../components/SearchProductList";
 import TopBar from "../components/TopBar";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 function ProductSearchList() {
   const { keyword } = useParams();
+  const navigate = useNavigate();
 
-  const onClick = () => {
-    console.log("click");
+  const onClick = (item) => {
+    navigate(`/products/${item.id}`);
   };
 
   return (
