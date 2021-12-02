@@ -2,7 +2,8 @@ import { Button, Card, Checkbox, Divider } from "antd";
 import "antd/dist/antd.css";
 import Product from "../classes/crudl/Product";
 import React, { useEffect, useState } from "react";
-import Cart from '../classes/crudl/Cart'
+import Cart from "../classes/crudl/Cart";
+import { v4 as uuid } from "uuid";
 
 function CoupangProductRead({ id, title, showList, style = {} }) {
   const [data, setData] = useState({});
@@ -14,7 +15,7 @@ function CoupangProductRead({ id, title, showList, style = {} }) {
   if (!data) return null;
 
   const addCart = () => {
-    Cart.createCart({cartProductId: id})
+    Cart.createCart({ id: uuid(), cartProductId: id });
   };
 
   return (
@@ -23,7 +24,11 @@ function CoupangProductRead({ id, title, showList, style = {} }) {
         <img src={data["img_imageUrl"]} alt={"logo"} style={styles.img} />
         <div>
           <img
-            src={'https://image8.coupangcdn.com/image/badges/cou_pick/web/coupick@2x.png'} alt={'logo'} style={styles.coupangimg}
+            src={
+              "https://image8.coupangcdn.com/image/badges/cou_pick/web/coupick@2x.png"
+            }
+            alt={"logo"}
+            style={styles.coupangimg}
           />
           <div style={{ display: "flex" }}>
             <h2 style={styles.h2}>{data["name"]}</h2>
@@ -58,7 +63,11 @@ function CoupangProductRead({ id, title, showList, style = {} }) {
       </div>
       <div style={styles.description}>
         <p>{data["description"]}</p>
-        <img src={data['img_descImage']} alt={"description"} style={styles.descImg} />
+        <img
+          src={data["img_descImage"]}
+          alt={"description"}
+          style={styles.descImg}
+        />
       </div>
     </div>
   );
@@ -69,9 +78,9 @@ const styles = {
     width: "350px",
     margin: "0 40px 0 5px",
   },
-  coupangimg:{
+  coupangimg: {
     width: 68,
-    marginBottom: 5
+    marginBottom: 5,
   },
   h2: { fontWeight: "bold", fontSize: "18px" },
   h5: { fontWeight: "bold", fontSize: "12px" },
@@ -106,11 +115,11 @@ const styles = {
     textAlign: "center",
   },
   id: {
-    marginTop: 60
+    marginTop: 60,
   },
   descImg: {
-    marginTop: '20px'
-  }
+    marginTop: "20px",
+  },
 };
 
 export default CoupangProductRead;
