@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
   import "antd/dist/antd.css";
   import React, { useReducer } from "react";
   import Cart from "../../classes/crudl/Cart";
-  
+
   function CartCreate({ initialValue = {} ,onCreate, inputColumn, style = {} }) {
     const initialState = {
       lists: [],
@@ -17,15 +17,15 @@ import { v4 as uuid } from "uuid";
           return { ...state, lists: action.lists, loading: false };
         case "ERROR":
           return { ...state, loading: false, error: true };
-        case "ADD": 
+        case "ADD":
           return { ...state, lists: [action.data, ...state.lists] };
-        case "RESET": 
+        case "RESET":
           return { ...state, form: initialState.form };
-        case "SET_INPUT": 
+        case "SET_INPUT":
           return {
             ...state,
             form: { ...state.form, [action.name]: action.value },
-          }; 
+          };
         default:
           return state;
       }
@@ -58,15 +58,12 @@ import { v4 as uuid } from "uuid";
 
     const schema = require("../../../src/schema.js");
     let data = schema["Cart"];
-  
+
     return (
       <div style={{ ...styles.container, ...style }}>
         <Form onFinish={createCart}>
           {inputColumn.map((column) => {
             for (let i = 0; i < data.length; i++) {
-              if(data[i]["isConnection"] === true){
-                continue;
-              }
               if (data[i]["name"] == column && data[i]["mandatory"]) {
                 //필수
                 if (data[i]["type"] === "AWSDate") {
@@ -257,7 +254,7 @@ import { v4 as uuid } from "uuid";
               }
             }
           })}
-  
+
           <Button
             type="primary"
             htmlType="submit"
@@ -269,9 +266,8 @@ import { v4 as uuid } from "uuid";
       </div>
     );
   }
-  
+
   const styles = {
     container: { display: 'flex', justifyContent: 'center', padding: 20 },
   };
   export default CartCreate;
-  

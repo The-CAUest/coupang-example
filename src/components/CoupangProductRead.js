@@ -2,6 +2,7 @@ import { Button, Card, Checkbox, Divider } from "antd";
 import "antd/dist/antd.css";
 import Product from "../classes/crudl/Product";
 import React, { useEffect, useState } from "react";
+import Cart from '../classes/crudl/Cart'
 
 function CoupangProductRead({ id, title, showList, style = {} }) {
   const [data, setData] = useState({});
@@ -12,7 +13,9 @@ function CoupangProductRead({ id, title, showList, style = {} }) {
 
   if (!data) return null;
 
-  const addCart = () => {};
+  const addCart = () => {
+    Cart.createCart({cartProductId: id})
+  };
 
   return (
     <div style={style}>
@@ -56,7 +59,6 @@ function CoupangProductRead({ id, title, showList, style = {} }) {
       <div style={styles.description}>
         <p>{data["description"]}</p>
         <img src={data['img_descImage']} alt={"description"} style={styles.descImg} />
-        <img src={'https://thumbnail10.coupangcdn.com/thumbnails/remote/q89/image/retail/images/2020/08/21/16/9/c07047be-f534-4853-af67-12822c8e4263.jpg'} alt={"description"} style={styles.descImg} />
       </div>
     </div>
   );

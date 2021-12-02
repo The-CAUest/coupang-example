@@ -17,7 +17,7 @@ function UpdateProductModal({ id }) {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", height: "90px" }}>
+    <div style={{ display: "flex", justifyContent: "center", height: "105px" }}>
       <Button id="button" style={styles.button} onClick={showModal}>
         수정
       </Button>

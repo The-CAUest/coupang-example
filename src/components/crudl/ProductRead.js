@@ -11,23 +11,14 @@ function ProductRead({ id, title, showList, style={} }) {
   }, [id])
 
   if (!data) return null
-  
+
   return(
       <div style={style}>
-        <Card
-          cover={ <img src={data['img_imgUrl']} alt='logo' /> }
-          title={data[title]}
-        >
-          {showList.map(function (elem) {
-            if (typeof (data[elem]) === 'boolean') {
-              return <Checkbox style={{marginBottom:15}} defaultChecked={data[elem]} disabled>{elem}</Checkbox>
-            } else if (elem.startsWith('img_')) {return}
-            return <p>{data[elem]}</p>
-          })}
-        </Card>
+        <img src={data['img_imageUrl']} width={80} alt='image' />
+        <h4>{data['name']}</h4>
+        <h4>{data['price']}</h4>
       </div>
    )
 }
 
 export default ProductRead
-  

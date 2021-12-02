@@ -88,7 +88,7 @@ const styles = {
     verticalAlign: "middle",
   },
   deleteBtn: {
-    height: "90px",
+    height: "105px",
     margin: "0px 0 0 10px",
     padding: "25px 0 0 0",
   },

@@ -64,9 +64,6 @@ import { v4 as uuid } from "uuid";
         <Form onFinish={createProduct}>
           {inputColumn.map((column) => {
             for (let i = 0; i < data.length; i++) {
-              if(data[i]["isConnection"] === true){
-                continue;
-              }
               if (data[i]["name"] == column && data[i]["mandatory"]) {
                 //필수
                 if (data[i]["type"] === "AWSDate") {
