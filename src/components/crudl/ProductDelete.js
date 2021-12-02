@@ -27,7 +27,7 @@ function ProductDelete({ id, onDelete, style = {} }) {
 
   async function fetchProduct() {
     try {
-      Product.listProduct(id).then((data) => {
+      Product.readProduct(id).then((data) => {
         dispatch({ type: "SET_DATA", list: data });
       });
     } catch (err) {

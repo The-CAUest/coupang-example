@@ -3,7 +3,7 @@ import "antd/dist/antd.css";
 import Category from "../../classes/crudl/Category";
 import React, { useEffect, useState } from "react";
 
-function CategoryList({ filter = {}, showList, onClick, style = {} }) {
+function CategoryList({ filter, showList, onClick, style = {} }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
