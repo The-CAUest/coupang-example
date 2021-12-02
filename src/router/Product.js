@@ -1,8 +1,11 @@
 import React from "react";
+import { useParams } from "react-router";
 import CoupangProductRead from "../components/CoupangProductRead";
 import TopBar from "../components/TopBar";
 
 function Product() {
+  const { productID } = useParams();
+
   return (
     <div
       className="mycoupang"
@@ -16,7 +19,7 @@ function Product() {
       <TopBar />
       <div style={styles.contents}>
         <CoupangProductRead
-          id={"f87438c8-b7d3-4e98-8bd5-d7822778017f"}
+          id={productID}
           showList={["img_imageUrl", "name", "price", "img_descImage"]}
         />
       </div>

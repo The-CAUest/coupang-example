@@ -17,7 +17,7 @@ const Root = () => (
       <Route path="/cart" element={<MyCart />} />
       <Route path="/my-coupang" element={<MyCoupang />} />
       <Route path="/search" element={<ProductSearchList />} />
-      <Route path="/products" element={<Product />} />
+      <Route path="/products/:productID" element={<Product />} />
       <Route path="/login" element={<Login />} />
     </Routes>
   </BrowserRouter>
