@@ -23,11 +23,11 @@ function ProductSearchList() {
     >
       <TopBar />
       <div style={styles.searchHeader}>
-        전체 ><b>'여기 수정하기'</b>
+        전체 ><b>'{keyword}'</b>
       </div>
       <div style={styles.container}>
         <div style={{ display: "flex" }}>
-          <b style={styles.borderText}> '여기 수정하기' </b>
+          <b style={styles.borderText}> '{keyword}' </b>
           <h4 style={styles.text}>에 대한 검색 결과</h4>
         </div>
         <SearchProductList
