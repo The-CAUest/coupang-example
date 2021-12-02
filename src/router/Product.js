@@ -16,9 +16,8 @@ function Product() {
       <TopBar />
       <div style={styles.contents}>
         <CoupangProductRead
-          id={"5928b725-b7aa-49e0-97bb-a554c8465141"}
+          id={"6609d7c2-dfb2-4212-9ed7-d4a8e502ebe3"}
           showList={["img_imageUrl", "name", "price", "img_descImage"]}
-          style={styles.readcomp}
         />
       </div>
     </div>
@@ -30,11 +29,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     margin: "20px 0 0 0",
-  },
-  readcomp: {
-    // margin: '1px auto 50px',
-    // padding: '5px 0 0 70px'
-  },
+  }
 };
 
 export default Product;

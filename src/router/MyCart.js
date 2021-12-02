@@ -6,7 +6,7 @@ import ProductList from '../components/crudl/ProductList'
 import Product from '../classes/crudl/Product'
 import { useNavigate } from "react-router";
 
-function Cart () {
+function MyCart () {
   const [totalPrice, setPrice] = useState(0)
   const navigate = useNavigate();
 
@@ -175,4 +175,4 @@ const styles = {
   },
 }
 
-export default Cart
+export default MyCart
