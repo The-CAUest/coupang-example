@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import Category from "../classes/crudl/Category";
 import SearchProductList from "./SearchProductList";
 
@@ -7,6 +8,11 @@ const getRandomColor = () =>
 
 const Recommand = () => {
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
+
+  const onClick = (item) => {
+    navigate(`/products/${item.id}`);
+  };
 
   useEffect(() => {
     Category.listCategory().then((cats) => setCategories(cats));
@@ -43,6 +49,7 @@ const Recommand = () => {
             <SearchProductList
               showList={["name", "price"]}
               filter={{ categoryID: { eq: cat.id } }}
+              onClick={onClick}
             />
           </div>
         );

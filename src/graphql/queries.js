@@ -15,6 +15,7 @@ export const getCart = /* GraphQL */ `
         price
         categoryID
         img_imageUrl
+        img_descImage
         createdAt
         updatedAt
       }
@@ -33,6 +34,11 @@ export const listCarts = /* GraphQL */ `
         createdAt
         updatedAt
         owner
+        Product {
+          id
+          name
+          price
+        }
       }
       nextToken
     }
@@ -77,6 +83,7 @@ export const getProduct = /* GraphQL */ `
       price
       categoryID
       img_imageUrl
+      img_descImage
       createdAt
       updatedAt
     }
@@ -96,6 +103,7 @@ export const listProducts = /* GraphQL */ `
         price
         categoryID
         img_imageUrl
+        img_descImage
         createdAt
         updatedAt
       }

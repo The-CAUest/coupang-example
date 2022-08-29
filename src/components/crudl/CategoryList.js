@@ -7,9 +7,11 @@ function CategoryList({ filter, showList, onClick, style = {} }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    Category.listCategory(filter).then((data) => {
-      setData(data);
-    });
+    Category.listCategory(filter)
+      .then((data) => {
+        setData(data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   if (!data) return null;
@@ -23,7 +25,7 @@ function CategoryList({ filter, showList, onClick, style = {} }) {
         }}
         dataSource={data}
         renderItem={(item) => (
-          <List.Item onClick={onClick}>
+          <List.Item onClick={onClick ? () => onClick(item) : onClick}>
             {showList.map(function (elem) {
               if (typeof item[elem] === "boolean") {
                 return (

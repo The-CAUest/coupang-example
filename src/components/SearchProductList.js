@@ -20,9 +20,9 @@ function SearchProductList({ filter, showList, onClick, style = {} }) {
         bordered
         grid={{ column: 4 }}
         dataSource={data}
-        style={{ paddingTop: "20px" }}
+        style={{ paddingTop: "20px", width: 1010 }}
         renderItem={(item) => (
-          <List.Item onClick={onClick}>
+          <List.Item onClick={onClick ? () => onClick(item) : onClick}>
             <Card
               size="small"
               cover={<img src={item["img_imageUrl"]} alt="logo" />}

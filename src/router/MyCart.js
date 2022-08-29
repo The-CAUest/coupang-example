@@ -4,23 +4,36 @@ import { Button } from "antd";
 import "antd/dist/antd.css";
 import ProductList from "../components/crudl/ProductList";
 import Product from "../classes/crudl/Product";
+import Cart from "../classes/crudl/Cart";
+import { useNavigate } from "react-router";
+import CartList from "../components/crudl/CartList";
+import CartCreate from "../components/crudl/CartCreate";
+import ProductRead from "../components/crudl/ProductRead";
 
-function Cart() {
+function MyCart() {
   const [totalPrice, setPrice] = useState(0);
+  const [id, setId] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    let total_price = 0;
-    Product.listProduct().then((data) => {
+    let temp_id = [];
+    Cart.listCart().then((data) => {
+      let total_price = 0;
       for (let i = 0; i < data.length; i++) {
-        total_price += data[i].price;
+        if (!data[i].Product?.id) {
+          continue;
+        }
+        temp_id.push(data[i].Product?.id);
+        total_price += data[i].Product?.price;
       }
+      setId(temp_id);
       setPrice(total_price);
     });
-  }, []);
+  });
 
   return (
     <div style={{ backgroundColor: "#EBEBEB" }}>
-      <header>
+      <header style={styles.header}>
         <a href="/">
           <img
             alt="coupang"
@@ -31,10 +44,10 @@ function Cart() {
           />
         </a>
       </header>
-      <section class="contentsCart" style={styles.contentsCart}>
-        <section class="cart-title">
+      <section style={styles.contentsCart}>
+        <section>
           <ShoppingCartOutlined style={styles.cartIcon} />
-          <h1>장바구니</h1>
+          <h1 style={styles.h1}>장바구니</h1>
         </section>
 
         <div class="tableContent" style={styles.tableContent}>
@@ -42,12 +55,14 @@ function Cart() {
             <h4>전체 상품</h4>
             <h4>상품 정보</h4>
             <h4>상품 금액</h4>
-            <h4>배송비</h4>
           </div>
-          <ProductList
-            showList={["img_imageUrl", "name", "price"]}
-            style={styles.list}
-          />
+          {id.map((elem) => (
+            <ProductRead
+              id={elem}
+              showList={["img_imageUrl", "name", "price"]}
+              style={styles.readcomp}
+            />
+          ))}
           <div class="cartTotalPrice" style={styles.cartTotalPrice}>
             <div style={styles.text}>
               <h3 class="h" style={styles.h}>
@@ -86,7 +101,13 @@ function Cart() {
             class="order-buttons"
             style={{ marginTop: "30px", textAlign: "center" }}
           >
-            <Button id="button" style={styles.button} type="primary" ghost>
+            <Button
+              id="button"
+              style={styles.button}
+              type="primary"
+              onClick={() => navigate("/")}
+              ghost
+            >
               계속 쇼핑하기
             </Button>
             <Button id="button" style={styles.button} type="primary">
@@ -103,9 +124,14 @@ function Cart() {
 }
 
 const styles = {
+  header: {
+    width: "1010px",
+    margin: "0 auto 10px",
+  },
   coupang: {
     display: "block",
     width: "140px",
+    padding: "20px 0 10px",
   },
   contentsCart: {
     width: "1010px",
@@ -122,8 +148,11 @@ const styles = {
   cartIcon: {
     float: "left",
     marginRight: 10,
-    marginBottom: 20,
-    fontSize: "25px",
+    marginTop: 3,
+    fontSize: "40px",
+  },
+  h1: {
+    fontSize: 30,
   },
   tableContent: {
     fontSize: "14px",
@@ -133,7 +162,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     backgroundColor: "#EBEBEB",
-    marginTop: 30,
+    marginTop: 20,
     padding: "5px 20px 0px 20px",
   },
   cartTotalPrice: {
@@ -163,6 +192,12 @@ const styles = {
     width: "100%",
     marginBottom: "30px",
   },
+  readcomp: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignContent: "center",
+    padding: "7px 0px 0px 5px",
+  },
 };
 
-export default Cart;
+export default MyCart;

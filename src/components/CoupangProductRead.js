@@ -1,8 +1,9 @@
 import { Button, Card, Checkbox, Divider } from "antd";
-import { HeartTwoTone } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import Product from "../classes/crudl/Product";
 import React, { useEffect, useState } from "react";
+import Cart from "../classes/crudl/Cart";
+import { v4 as uuid } from "uuid";
 
 function CoupangProductRead({ id, title, showList, style = {} }) {
   const [data, setData] = useState({});
@@ -13,16 +14,24 @@ function CoupangProductRead({ id, title, showList, style = {} }) {
 
   if (!data) return null;
 
-  const addCart = () => {};
+  const addCart = () => {
+    Cart.createCart({ id: uuid(), cartProductId: id });
+  };
 
   return (
     <div style={style}>
       <div style={{ display: "flex" }}>
         <img src={data["img_imageUrl"]} alt={"logo"} style={styles.img} />
         <div>
+          <img
+            src={
+              "https://image8.coupangcdn.com/image/badges/cou_pick/web/coupick@2x.png"
+            }
+            alt={"logo"}
+            style={styles.coupangimg}
+          />
           <div style={{ display: "flex" }}>
             <h2 style={styles.h2}>{data["name"]}</h2>
-            <HeartTwoTone style={styles.heart} />
           </div>
           <Divider style={styles.divider} />
           <strong style={styles.strong}>
@@ -46,14 +55,19 @@ function CoupangProductRead({ id, title, showList, style = {} }) {
               장바구니 담기
             </Button>
             <Button style={styles.button} type="primary">
-              바로구매>
+              바로구매 >
             </Button>
           </div>
-          <h5>쿠팡상품번호 : {data["id"]}</h5>
+          <h5 style={styles.id}>쿠팡상품번호 : {data["id"]}</h5>
         </div>
       </div>
       <div style={styles.description}>
         <p>{data["description"]}</p>
+        <img
+          src={data["img_descImage"]}
+          alt={"description"}
+          style={styles.descImg}
+        />
       </div>
     </div>
   );
@@ -63,6 +77,10 @@ const styles = {
   img: {
     width: "350px",
     margin: "0 40px 0 5px",
+  },
+  coupangimg: {
+    width: 68,
+    marginBottom: 5,
   },
   h2: { fontWeight: "bold", fontSize: "18px" },
   h5: { fontWeight: "bold", fontSize: "12px" },
@@ -93,13 +111,14 @@ const styles = {
     margin: "0px 20px 0px 0px",
   },
   description: {
-    marginTop: "10px",
+    marginTop: "30px",
     textAlign: "center",
   },
-  heart: {
-    verticalAlign: "middle",
-    margin: "5px 0 0 10px",
-    fontSize: "20px",
+  id: {
+    marginTop: 60,
+  },
+  descImg: {
+    marginTop: "20px",
   },
 };
 

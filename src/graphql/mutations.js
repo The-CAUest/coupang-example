@@ -18,6 +18,7 @@ export const createCart = /* GraphQL */ `
         price
         categoryID
         img_imageUrl
+        img_descImage
         createdAt
         updatedAt
       }
@@ -41,6 +42,7 @@ export const updateCart = /* GraphQL */ `
         price
         categoryID
         img_imageUrl
+        img_descImage
         createdAt
         updatedAt
       }
@@ -64,6 +66,7 @@ export const deleteCart = /* GraphQL */ `
         price
         categoryID
         img_imageUrl
+        img_descImage
         createdAt
         updatedAt
       }
@@ -130,6 +133,7 @@ export const createProduct = /* GraphQL */ `
       price
       categoryID
       img_imageUrl
+      img_descImage
       createdAt
       updatedAt
     }
@@ -147,6 +151,7 @@ export const updateProduct = /* GraphQL */ `
       price
       categoryID
       img_imageUrl
+      img_descImage
       createdAt
       updatedAt
     }
@@ -164,6 +169,7 @@ export const deleteProduct = /* GraphQL */ `
       price
       categoryID
       img_imageUrl
+      img_descImage
       createdAt
       updatedAt
     }

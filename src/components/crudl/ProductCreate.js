@@ -9,7 +9,7 @@ import { v4 as uuid } from "uuid";
       lists: [],
       loading: true,
       error: false,
-      form: { id: "",name: "",description: "",price: 0,categoryID: "",img_imageUrl: "",},
+      form: { id: "",name: "",description: "",price: 0,categoryID: "",img_imageUrl: "",img_descImage: "",},
     };
     function reducer(state, action) {
       switch (action.type) {
@@ -60,13 +60,10 @@ import { v4 as uuid } from "uuid";
     let data = schema["Product"];
   
     return (
-      <div style={{ ...styles.container, ...style }}>
+      <div style={ style }>
         <Form onFinish={createProduct}>
           {inputColumn.map((column) => {
             for (let i = 0; i < data.length; i++) {
-              if(data[i]["isConnection"] === true){
-                continue;
-              }
               if (data[i]["name"] == column && data[i]["mandatory"]) {
                 //필수
                 if (data[i]["type"] === "AWSDate") {
@@ -269,9 +266,6 @@ import { v4 as uuid } from "uuid";
       </div>
     );
   }
-  
-  const styles = {
-    container: { display: 'flex', justifyContent: 'center', padding: 20 },
-  };
+
   export default ProductCreate;
   

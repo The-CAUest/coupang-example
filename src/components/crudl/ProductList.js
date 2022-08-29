@@ -20,7 +20,7 @@ function ProductList({ filter, showList, onClick, style = {} }) {
         bordered
         dataSource={data}
         renderItem={(item) => (
-          <List.Item onClick={onClick}>
+          <List.Item onClick={onClick ? () => onClick(item) : onClick}>
             {showList.map(function (elem) {
               if (typeof item[elem] === "boolean") {
                 return (
@@ -29,7 +29,9 @@ function ProductList({ filter, showList, onClick, style = {} }) {
                   </Checkbox>
                 );
               } else if (elem.startsWith("img_")) {
-                return <img src={item[elem]} width={64} alt="logo" />;
+                return (
+                  <img src={item[elem]} alt="logo" style={{ width: 80 }} />
+                );
               }
               return <p>{item[elem]}</p>;
             })}

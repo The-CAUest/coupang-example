@@ -1,10 +1,14 @@
 import React from "react";
 import SearchProductList from "../components/SearchProductList";
 import TopBar from "../components/TopBar";
+import { useNavigate, useParams } from "react-router";
 
 function ProductSearchList() {
-  const onClick = () => {
-    console.log("click");
+  const { keyword } = useParams();
+  const navigate = useNavigate();
+
+  const onClick = (item) => {
+    navigate(`/products/${item.id}`);
   };
 
   return (
@@ -19,17 +23,18 @@ function ProductSearchList() {
     >
       <TopBar />
       <div style={styles.searchHeader}>
-        전체 ><b>'여기 수정하기'</b>
+        전체 ><b>'{keyword}'</b>
       </div>
       <div style={styles.container}>
         <div style={{ display: "flex" }}>
-          <b style={styles.borderText}> '여기 수정하기' </b>
+          <b style={styles.borderText}> '{keyword}' </b>
           <h4 style={styles.text}>에 대한 검색 결과</h4>
         </div>
         <SearchProductList
           showList={["img_imgUrl", "name", "price"]}
           onClick={onClick}
           style={styles.listcomp}
+          filter={{ name: { contains: keyword } }}
         />
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import ProductCreate from "../components/crudl/ProductCreate";
 import CategoryList from "../components/crudl/CategoryList";
+import CategoryCreate from "./crudl/CategoryCreate";
 
 function RegisProduct() {
   const [visible, setVisible] = useState(false);
@@ -40,13 +41,19 @@ function RegisProduct() {
             "name",
             "price",
             "description",
-            "img_imgUrl",
+            "img_imageUrl",
+            "img_descImage",
             "categoryID",
           ]}
           onCreate={handleOk}
         />
-        <CategoryList showList={["id", "name"]} />
-        {/*<ProductUpdate id={'0ce25b16-7cfa-46b5-baf9-cbf8bb40a632'} inputColumn={["name", "price", "description", "categoryID"]} />*/}
+        <CategoryList
+          showList={["id", "name"]}
+          style={styles.listcomp}
+          onClick={(item) =>
+            alert(item.id + " 를 복사해서 categoryID에 붙여넣으세요.")
+          }
+        />
       </Modal>
     </div>
   );
@@ -59,6 +66,9 @@ const styles = {
     textAlign: "center",
     verticalAlign: "middle",
     marginTop: "20px",
+  },
+  listcomp: {
+    marginTop: 30,
   },
 };
 
